@@ -19,6 +19,9 @@ mongoose.connect(process.env.MONGO_URL , {
     .then(() => console.log('MongoDB connected'))
     .catch((err) => console.error('MongoDB connection error:', err));
     
+app.get('/', (req,res) => {
+  res.json("ChatBot");
+})
 
 const QuerySchema = new mongoose.Schema({
     question: String,
